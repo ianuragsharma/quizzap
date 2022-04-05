@@ -1,0 +1,14 @@
+:root {
+  --primary-brand: #fbdf57;
+  --bg-dark: #0f172a;
+  --bg-dim: #1e293b;
+  --bg-brand: #eab308;
+}
+
+* {
+  font-family: "Inconsolata", monospace;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--solid-white);
+}
