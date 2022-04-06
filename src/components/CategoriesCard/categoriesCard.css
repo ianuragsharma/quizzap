@@ -1,0 +1,24 @@
+.vertical-card {
+  min-width: 17rem;
+  border: 2px solid var(--bg-dim);
+  border-radius: 10px;
+  padding: 5px;
+}
+.card-shadow {
+  box-shadow: 0;
+  transition: box-shadow 0.5s;
+}
+.card-shadow:hover {
+  box-shadow: -2px -1px 75px -5px var(--solid-black);
+}
+.categories-cta {
+  padding: 0px;
+  justify-content: center;
+}
+.categories-cta {
+  margin: 1rem 0rem;
+  padding: 0.5rem 1rem;
+}
+.img-categories {
+  object-fit: fill;
+}

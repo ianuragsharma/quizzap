@@ -1,0 +1,8 @@
+.quizzes-heading {
+  margin: 4rem;
+}
+.quizzies-container {
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: center;
+}
