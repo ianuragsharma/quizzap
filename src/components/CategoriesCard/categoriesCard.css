@@ -11,13 +11,18 @@
 .card-shadow:hover {
   box-shadow: -2px -1px 75px -5px var(--solid-black);
 }
-.categories-cta {
-  padding: 0px;
-  justify-content: center;
+.link-cta {
+  margin-top: auto;
 }
 .categories-cta {
-  margin: 1rem 0rem;
+  background-color: var(--primary-brand);
   padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin: 8px 4px;
+}
+.categories-cta:hover {
+  background-color: var(--bg-brand);
+  color: var(--solid-white);
 }
 .img-categories {
   object-fit: fill;

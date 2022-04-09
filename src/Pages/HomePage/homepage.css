@@ -33,7 +33,7 @@
   color: var(--solid-white);
 }
 
-button:after {
+.btn-cta:after {
   content: "»";
   position: absolute;
   opacity: 0;
@@ -41,7 +41,7 @@ button:after {
   transition: 0.5s;
 }
 
-button:hover:after {
+.btn-cta:hover:after {
   opacity: 1;
   right: 10px;
 }
