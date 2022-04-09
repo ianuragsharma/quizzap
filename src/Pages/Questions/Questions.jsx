@@ -1,8 +1,8 @@
-import "./question.css";
+import "./questions.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useGlobal } from "../../context/GlobalContext";
-const Question = ({}) => {
+const Questions = ({}) => {
   const {
     allQuestion,
     currentQuestion,
@@ -17,26 +17,25 @@ const Question = ({}) => {
 
   useEffect(() => {
     setOptions(
-      allQuestion &&
-        shuffle([
-          allQuestion[currentQuestion]?.correct_answer,
-          ...allQuestion[currentQuestion]?.incorrect_answers,
-        ])
+      shuffle([
+        allQuestion[currentQuestion].correct_answer,
+        ...allQuestion[currentQuestion].incorrect_answers,
+      ])
     );
   }, [allQuestion, currentQuestion]);
   const shuffle = (array) => array.sort(() => Math.random() - 0.5);
 
   const handleOptionStyle = (option) => {
-    if (option === allQuestion[currentQuestion]?.correct_answer)
+    if (option === allQuestion[currentQuestion].correct_answer)
       return "corret-option";
     else if (
       option === selectedOption &&
-      selectedOption !== allQuestion[currentQuestion]?.correct_answer
+      selectedOption !== allQuestion[currentQuestion].correct_answer
     )
       return "wrong-option";
     else if (
       option === selectedOption &&
-      selectedOption === allQuestion[currentQuestion]?.correct_answer
+      selectedOption === allQuestion[currentQuestion].correct_answer
     )
       return "corret-option";
     else {
@@ -46,7 +45,7 @@ const Question = ({}) => {
 
   const handleOption = (option) => {
     setSelectedOption(option);
-    if (option === allQuestion[currentQuestion]?.correct_answer)
+    if (option === allQuestion[currentQuestion].correct_answer)
       setScore(score + 10);
   };
   const handleNext = () => {
@@ -109,4 +108,4 @@ const Question = ({}) => {
   );
 };
 
-export { Question };
+export { Questions };
