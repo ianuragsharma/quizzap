@@ -1,0 +1,50 @@
+.question-heading {
+  margin: 2rem 0rem;
+}
+.question-container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.question-details {
+  justify-content: space-between;
+  margin: 1.5rem 0rem;
+}
+.option-btn {
+  margin: 0.5rem 0rem;
+  background-color: var(--bg-dim);
+  padding: 1rem 2rem;
+  width: 40rem;
+  border-radius: 20px;
+}
+.option-container {
+  align-content: center;
+  align-items: center;
+}
+.btn-next {
+  color: var(--solid-black);
+  background-color: var(--primary-brand);
+}
+.btn-next:hover {
+  background-color: var(--bg-brand);
+}
+.btn-quit {
+  border-radius: 5px;
+}
+.btn-quit:hover {
+  background-color: var(--bg-dim);
+}
+.corret-option {
+  background-color: var(--alert-green);
+  cursor: not-allowed;
+}
+
+.wrong-option {
+  background-color: var(--alert-red);
+  cursor: not-allowed;
+}
+.disable-btn {
+  background-color: var(--dim-grey);
+  color: var(--solid-black);
+  cursor: not-allowed;
+}

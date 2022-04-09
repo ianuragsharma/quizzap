@@ -1,15 +1,20 @@
 import "./navbar.css";
-
+import { useGlobal } from "../../context/GlobalContext";
 import { Link } from "react-router-dom";
 const Navbar = () => {
+  const { handleReset } = useGlobal();
   return (
     <>
       <nav className="nav-container flex-row">
         <div className="flex-row ">
           <Link to="/">
-            <h4 className="fw-500 nav-heading">
+            <h4 className="fw-500 nav-heading" onClick={() => handleReset()}>
               Quizzap
-              <img className="image-responsive brand-img" src="favicon.png" alt="" />{" "}
+              <img
+                className="image-responsive brand-img"
+                src="favicon.png"
+                alt=""
+              />{" "}
             </h4>
           </Link>
         </div>

@@ -1,7 +1,11 @@
 import "./rules.css";
 import { rules } from "../../db/rules";
 import { Link } from "react-router-dom";
+import { Loader } from "../../components";
+import { useGlobal } from "../../context/GlobalContext";
 const Rules = () => {
+  const { allQuestion } = useGlobal();
+  console.log(allQuestion.length);
   return (
     <>
       <div className="container">
@@ -16,11 +20,15 @@ const Rules = () => {
               </li>
             ))}
           </ul>
-          <Link to="/">
-            <button className="btn btn-solid-primary text-xl text-black fw-700 btn-cta">
-              Lets Start!
-            </button>
-          </Link>
+          {allQuestion.length ? (
+            <Link to="/quiz">
+              <button className="btn btn-solid-primary text-xl text-black fw-700 btn-cta">
+                Lets Start!
+              </button>
+            </Link>
+          ) : (
+            <Loader />
+          )}
         </div>
       </div>
     </>
