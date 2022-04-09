@@ -8,13 +8,13 @@ const Navbar = () => {
       <nav className="nav-container flex-row">
         <div className="flex-row ">
           <Link to="/">
-            <h4 className="fw-500 nav-heading" onClick={() => handleReset()}>
+            <h4 className="fw-500 nav-heading" onClick={handleReset}>
               Quizzap
               <img
                 className="image-responsive brand-img"
                 src="favicon.png"
                 alt=""
-              />{" "}
+              />
             </h4>
           </Link>
         </div>
