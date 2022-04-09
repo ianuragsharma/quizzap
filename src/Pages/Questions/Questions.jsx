@@ -75,8 +75,8 @@ const Questions = ({}) => {
 
         <div className="option-container flex-column">
           {options &&
-            options.map((option) => (
-              <div>
+            options.map((option, index) => (
+              <div key={index}>
                 <button
                   className={`option-btn ${
                     selectedOption && handleOptionStyle(option)
@@ -91,13 +91,13 @@ const Questions = ({}) => {
         </div>
         <div className="question-details flex-row">
           <button
-            class="btn btn-outlined-secondary text-lg btn-quit"
+            className="btn btn-outlined-secondary text-lg btn-quit"
             onClick={() => handleQuit()}
           >
             Quit
           </button>
           <button
-            class="btn btn-solid-primary text-lg text-white btn-next"
+            className="btn btn-solid-primary text-lg text-white btn-next"
             onClick={() => handleNext()}
           >
             {currentQuestion > 8 ? "End Quiz" : "Next"}
