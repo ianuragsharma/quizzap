@@ -18,7 +18,7 @@ const HomePage = () => {
             </p>
 
             <Link to="/quizzes">
-              <button className="btn btn-solid-primary text-xl text-black fw-700 btn-cta">
+              <button className="btn btn-solid-primary text-xl text-black fw-700  btn-cta">
                 Take a quiz
               </button>
             </Link>
