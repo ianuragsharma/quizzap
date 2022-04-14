@@ -50,8 +50,8 @@ const Questions = ({}) => {
   };
   const handleNext = () => {
     if (currentQuestion > 8 && selectedOption) {
+      setCurrentQuestion(0);
       navigate("/score");
-      handleReset();
     } else if (selectedOption) {
       setCurrentQuestion((prevCount) => prevCount + 1);
       setSelectedOption();
@@ -76,7 +76,7 @@ const Questions = ({}) => {
         <div className="option-container flex-column">
           {options &&
             options.map((option, index) => (
-              <div key={index}>
+              <div className="options" key={index}>
                 <button
                   className={`option-btn ${
                     selectedOption && handleOptionStyle(option)

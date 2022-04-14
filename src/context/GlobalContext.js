@@ -9,20 +9,17 @@ const GlobalContextProvider = ({ children }) => {
     setCurrentQuestion(0);
     setAllQuestion([]);
   };
+  const values = {
+    allQuestion,
+    setAllQuestion,
+    currentQuestion,
+    setCurrentQuestion,
+    score,
+    setScore,
+    handleReset,
+  };
   return (
-    <GlobalContext.Provider
-      value={{
-        allQuestion,
-        setAllQuestion,
-        currentQuestion,
-        setCurrentQuestion,
-        score,
-        setScore,
-        handleReset,
-      }}
-    >
-      {children}
-    </GlobalContext.Provider>
+    <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>
   );
 };
 const useGlobal = () => useContext(GlobalContext);
