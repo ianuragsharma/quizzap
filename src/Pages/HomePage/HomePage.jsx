@@ -1,6 +1,15 @@
 import "./homepage.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDocumentTitle } from "../../hooks";
+import { useAuth } from "../../context";
 const HomePage = () => {
+  useDocumentTitle("Home");
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const takeQuizHandler = () => {
+    if (user) navigate("/quizzes");
+    else navigate("/login");
+  };
   return (
     <>
       <div className="container">
@@ -17,11 +26,12 @@ const HomePage = () => {
               facts about yourself or the world.
             </p>
 
-            <Link to="/quizzes">
-              <button className="btn btn-solid-primary text-xl text-black fw-700  btn-cta">
-                Take a quiz
-              </button>
-            </Link>
+            <button
+              className="btn btn-solid-primary text-xl text-black fw-700  btn-cta"
+              onClick={takeQuizHandler}
+            >
+              Take a quiz
+            </button>
           </div>
           <img
             className="quiz-img"

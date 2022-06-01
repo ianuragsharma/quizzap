@@ -1,7 +1,9 @@
 import "./quizzes.css";
 import { CategoriesCard } from "../../components";
 import { categories } from "../../db/categories";
+import { useDocumentTitle } from "../../hooks";
 const Quizzes = () => {
+  useDocumentTitle("Quizzes");
   return (
     <>
       <h2 className="text-center quizzes-heading">

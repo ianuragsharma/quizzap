@@ -2,7 +2,9 @@ import "./questions.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { useGlobal } from "../../context/GlobalContext";
+import { useDocumentTitle } from "../../hooks";
 const Questions = ({}) => {
+  useDocumentTitle("Questions");
   const {
     allQuestion,
     currentQuestion,

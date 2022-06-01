@@ -3,7 +3,9 @@ import { rules } from "../../db/rules";
 import { Link } from "react-router-dom";
 import { Loader } from "../../components";
 import { useGlobal } from "../../context/GlobalContext";
+import { useDocumentTitle } from "../../hooks";
 const Rules = () => {
+  useDocumentTitle("Rules");
   const { allQuestion } = useGlobal();
   return (
     <div className="container">
