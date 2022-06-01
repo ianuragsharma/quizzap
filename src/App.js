@@ -1,5 +1,13 @@
 import "./styles/common.css";
-import { HomePage, Quizzes, Rules, Quiz, Score, Questions } from "./Pages";
+import {
+  HomePage,
+  Quizzes,
+  Rules,
+  Score,
+  Questions,
+  Login,
+  Signup,
+} from "./Pages";
 import { Navbar } from "./components";
 import { Route, Routes } from "react-router-dom";
 const App = () => {
@@ -8,11 +16,13 @@ const App = () => {
       <div className="body-wrapper">
         <Navbar />
         <Routes>
-          <Route path="/" exact element={<HomePage />} />
-          <Route path="/quizzes" exact element={<Quizzes />} />
-          <Route path="/rules" exact element={<Rules />} />
-          <Route path="/quiz" exact element={<Questions />} />
-          <Route path="/score" exact element={<Score />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/quizzes" element={<Quizzes />} />
+          <Route path="/rules" element={<Rules />} />
+          <Route path="/quiz" element={<Questions />} />
+          <Route path="/score" element={<Score />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
     </div>
