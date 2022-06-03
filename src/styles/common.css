@@ -12,3 +12,15 @@
   background-color: var(--bg-dark);
   color: var(--solid-white);
 }
+.btn-solid-primary {
+  background-color: var(--primary-brand);
+  color: var(--solid-black);
+}
+.btn-solid-primary:hover {
+  color: var(--solid-white);
+  background-color: var(--bg-brand);
+}
+
+.btn-outlined-secondary:hover {
+  background-color: var(--bg-dim);
+}

@@ -1,0 +1,27 @@
+.auth-container {
+  border-radius: 10px;
+  max-width: 30rem;
+  margin: 5rem auto;
+  padding: 1rem;
+  box-shadow: 0 0 20px 5px var(--bg-dim);
+}
+
+.user-details {
+  padding: 1rem;
+}
+.user-details > * {
+  margin: 0.5rem;
+}
+.login-preference {
+  margin-left: auto;
+}
+.user-details a:hover {
+  text-decoration: underline;
+}
+.input-area {
+  height: 2rem;
+  border: 1px solid var(--bg-dim);
+}
+.input-area:focus {
+  border: 1px solid var(--bg-dim);
+}

@@ -1,9 +1,10 @@
 import "./score.css";
 import { useGlobal } from "../../context/GlobalContext";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../hooks";
 const Score = () => {
   const { allQuestion, score } = useGlobal();
-
+  useDocumentTitle("Score");
   const allQuestions = allQuestion.map((question, idx) => (
     <div className="top">
       {question.question}
