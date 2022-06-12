@@ -1,7 +1,7 @@
 .nav-container {
   color: var(--text-primary);
   background-color: var(--bg-dark);
-  width: 100%;
+
   height: 4.5rem;
   border-bottom: 2px solid var(--bg-dim);
 }
@@ -10,11 +10,11 @@
   color: var(--primary-brand);
 }
 .nav-container > * {
-  margin: 0 auto;
+  margin: 0 2.5rem;
 }
 
 .nav-container input {
-  width: 40%;
+  width: 30%;
   background-color: var(--bg-dim);
 }
 
@@ -32,5 +32,8 @@
   }
   .nav-container input {
     width: 50%;
+  }
+  .nav-container > * {
+    margin: 0 8px;
   }
 }
