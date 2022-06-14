@@ -2,9 +2,20 @@ import "./score.css";
 import { useGlobal } from "../../context/GlobalContext";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../../hooks";
+import Confetti from "react-confetti";
+import { useEffect, useRef, useState } from "react";
+
 const Score = () => {
   const { allQuestion, score } = useGlobal();
   useDocumentTitle("Score");
+  const confettiRef = useRef(null);
+  const [height, setHeight] = useState(null);
+  const [width, setWidth] = useState(null);
+  useEffect(() => {
+    setHeight(confettiRef.current.clientHeight);
+    setWidth(confettiRef.current.clientWidth);
+  }, []);
+
   const allQuestions = allQuestion.map((question, idx) => (
     <div className="top">
       {question.question}
@@ -23,7 +34,14 @@ const Score = () => {
     </div>
   ));
   return (
-    <>
+    <div ref={confettiRef}>
+      <Confetti
+        className="confetti"
+        numberOfPieces={1000}
+        width={width}
+        height={height}
+        recycle={false}
+      />
       <h4 className="text-center question-heading">
         Your Score is {score}/100
       </h4>
@@ -38,7 +56,7 @@ const Score = () => {
           </button>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

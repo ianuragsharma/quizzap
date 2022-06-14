@@ -7,11 +7,12 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../firebase";
+import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
-
+  const navigate = useNavigate();
   const login = (email, password) => {
     signInWithEmailAndPassword(auth, email, password);
   };
@@ -21,6 +22,7 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.clear();
     signOut(auth);
+    navigate("/");
   };
 
   useEffect(() => {

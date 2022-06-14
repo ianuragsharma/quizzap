@@ -1,12 +1,13 @@
 import "./navbar.css";
 import { useEffect, useState } from "react";
 import { useGlobal } from "../../context/GlobalContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../../context";
 const Navbar = () => {
-  const { handleReset } = useGlobal();
+  const { handleReset, searchQuery, setSearchQuery } = useGlobal();
   const { user, logout } = useAuth();
   const [userName, setUserName] = useState(null);
+  let location = useLocation();
   useEffect(() => {
     localStorage.getItem("userName")
       ? setUserName(localStorage.getItem("userName"))
@@ -27,12 +28,17 @@ const Navbar = () => {
             </h4>
           </Link>
         </div>
-        <input
-          name="name"
-          type="text"
-          className="input-area text-base ml-3 "
-          placeholder="Search for Quizzes"
-        />
+        {location.pathname === "/quizzes" && (
+          <input
+            name="name"
+            type="text"
+            className="input-area text-base ml-3 "
+            placeholder="Search for Quizzes"
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+          />
+        )}
+
         <ul className="flex-row nav-items">
           <li>
             {user ? (
