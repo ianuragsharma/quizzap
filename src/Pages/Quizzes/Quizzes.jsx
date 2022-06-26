@@ -6,7 +6,6 @@ import { useGlobal } from "../../context";
 const Quizzes = () => {
   useDocumentTitle("Quizzes");
   const { searchQuery, setSearchQuery } = useGlobal();
-  console.log();
   const filterQuiz = (categories, searchQuery) =>
     categories.filter((category) =>
       searchQuery
