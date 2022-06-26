@@ -24,11 +24,11 @@ const Signup = () => {
     const { name, value } = e.target;
     setSignupFromData((prevData) => ({ ...prevData, [name]: value }));
   };
-
   const singUpHandler = async (e) => {
     e.preventDefault();
+    setFormError(false);
     setFirebaseError("");
-    if (password !== confirmPassword) {
+    if (password !== confirmPassword || password.length < 6) {
       setFormError(true);
       return;
     }
@@ -94,7 +94,7 @@ const Signup = () => {
             type="password"
             className="input-area text-base"
             required
-            minLength="4"
+            minLength="6"
             placeholder="Enter Password"
             value={password}
             onChange={fieldChangeHandler}
@@ -107,16 +107,12 @@ const Signup = () => {
             type="password"
             className="input-area text-base"
             required
-            minLength="4"
+            minLength="6"
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={fieldChangeHandler}
           />
-          {formError && (
-            <span className=" error-msg text-sm">
-              Both password and confirm password should be same
-            </span>
-          )}
+
           <div className="flex-row">
             <span>
               <input
@@ -131,6 +127,11 @@ const Signup = () => {
               </label>
             </span>
           </div>
+          {formError && (
+            <span className=" error-msg text-sm">
+              Both password and confirm password should be same
+            </span>
+          )}
           {firebaseError && (
             <span class=" error-msg text-sm">{firebaseError}</span>
           )}

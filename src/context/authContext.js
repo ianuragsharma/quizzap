@@ -14,15 +14,15 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const login = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   };
   const signup = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
   const logout = () => {
     localStorage.clear();
-    signOut(auth);
     navigate("/");
+    return signOut(auth);
   };
 
   useEffect(() => {

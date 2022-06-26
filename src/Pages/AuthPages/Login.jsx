@@ -18,7 +18,8 @@ const Login = () => {
     setError("");
     try {
       await login(email, password);
-      navigate("/");
+
+      // navigate("/");
     } catch (err) {
       setError(err.message);
     }
@@ -53,7 +54,7 @@ const Login = () => {
             type="password"
             className="input-area text-base"
             required
-            minLength="4"
+            minLength="6"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
