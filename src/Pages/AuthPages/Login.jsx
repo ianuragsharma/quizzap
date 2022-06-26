@@ -18,8 +18,7 @@ const Login = () => {
     setError("");
     try {
       await login(email, password);
-
-      // navigate("/");
+      navigate("/");
     } catch (err) {
       setError(err.message);
     }
