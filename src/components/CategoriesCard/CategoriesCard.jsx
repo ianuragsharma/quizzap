@@ -29,7 +29,7 @@ const CategoriesCard = ({ categories }) => {
         />
 
         <div className="card-details-container">
-          <h3 className="text-xl">{categories.title}</h3>
+          <h3 className="text-xl my-1">{categories.title}</h3>
           <span className="text-sm ">{categories.description} </span>
         </div>
         <Link to="/rules" className="link-cta">
