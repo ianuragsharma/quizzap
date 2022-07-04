@@ -6,7 +6,7 @@ import Confetti from "react-confetti";
 import { useEffect, useRef, useState } from "react";
 
 const Score = () => {
-  const { allQuestion, score } = useGlobal();
+  const { allQuestion, score, handleReset } = useGlobal();
   useDocumentTitle("Score");
   const confettiRef = useRef(null);
   const [height, setHeight] = useState(null);
@@ -51,7 +51,10 @@ const Score = () => {
       <div className="container text-center">{allQuestions}</div>
       <div className="text-center">
         <Link to="/quizzes">
-          <button className="btn btn-solid-primary text-xl text-black fw-700  btn-cta">
+          <button
+            className="btn btn-solid-primary text-xl text-black fw-700  btn-cta"
+            onClick={handleReset}
+          >
             Play Again?
           </button>
         </Link>
